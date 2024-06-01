@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message for Christy</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #ff6f61;
+        }
+        p {
+            font-size: 18px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .balloons {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Christy!</h1>
+        <p>Click the button below for a special surprise!</p>
+        <button onclick="showMessage()">Click me!</button>
+        <p id="message"></p>
+        <div class="balloons">
+            <img src="https://media.giphy.com/media/26FPy3QZQqGtDcrja/giphy.gif" alt="Balloons">
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').innerHTML = `
+                <strong>Happy Birthday, Christy! 🎉🎂</strong><br>
+                Wishing you a fantastic day filled with joy and success.<br>
+                You have been an incredible leader and inspiration to us all. <br>
+                Your dedication and hard work have not gone unnoticed, and we're all so grateful to have you as our lead. <br>
+                Here's to another year of great achievements and growth. We look forward to seeing you continue to excel and wish you all the best in your career and personal life. 🎈<br>
+                <em>Best wishes from Sai!</em>
+            `;
+            document.querySelector('.balloons').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
