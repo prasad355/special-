@@ -29,38 +29,69 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin: 10px;
         }
         button:hover {
             background-color: #0056b3;
         }
-        .balloons {
+        .balloons, .cake, .fireworks {
             display: none;
             margin-top: 20px;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Hey Christy!</h1>
-        <p>Click the button below for a special surprise!</p>
-        <button onclick="showMessage()">Click me!</button>
+        <p>Click the buttons below for a series of special surprises!</p>
+        <button id="button1" onclick="showMessage1()">Click for the first surprise!</button>
+        <button id="button2" class="hidden" onclick="showMessage2()">Click for the second surprise!</button>
+        <button id="button3" class="hidden" onclick="showMessage3()">Click for the final surprise!</button>
         <p id="message"></p>
         <div class="balloons">
-            <img src="https://media.giphy.com/media/26FPy3QZQqGtDcrja/giphy.gif" alt="Balloons">
+            <img src="https://media.giphy.com/media/26FPy3QZQqGtDcrja/giphy.gif" alt="Balloons GIF">
+        </div>
+        <div class="cake">
+            <img src="https://media.giphy.com/media/l0Ex7hQJQIXn3sFVu/giphy.gif" alt="Cake GIF">
+        </div>
+        <div class="fireworks">
+            <img src="https://media.giphy.com/media/3ohs4y8Eo4lM8Dp5Co/giphy.gif" alt="Fireworks GIF">
         </div>
     </div>
 
     <script>
-        function showMessage() {
+        function showMessage1() {
             document.getElementById('message').innerHTML = `
                 <strong>Happy Birthday, Christy! 🎉🎂</strong><br>
                 Wishing you a fantastic day filled with joy and success.<br>
                 You have been an incredible leader and inspiration to us all. <br>
-                Your dedication and hard work have not gone unnoticed, and we're all so grateful to have you as our lead. <br>
-                Here's to another year of great achievements and growth. We look forward to seeing you continue to excel and wish you all the best in your career and personal life. 🎈<br>
-                <em>Best wishes from Sai!</em>
+                Your dedication and hard work have not gone unnoticed, and we're all so grateful to have you as our lead.
             `;
             document.querySelector('.balloons').style.display = 'block';
+            document.getElementById('button1').classList.add('hidden');
+            document.getElementById('button2').classList.remove('hidden');
+        }
+
+        function showMessage2() {
+            document.getElementById('message').innerHTML += `
+                <br><br><strong>Here's a special cake for you! 🎂</strong><br>
+                May your day be as sweet and delightful as this cake.
+            `;
+            document.querySelector('.cake').style.display = 'block';
+            document.getElementById('button2').classList.add('hidden');
+            document.getElementById('button3').classList.remove('hidden');
+        }
+
+        function showMessage3() {
+            document.getElementById('message').innerHTML += `
+                <br><br><strong>Let's end with a bang! 🎆</strong><br>
+                May this year bring you all the joy, health, and success you deserve. your ability to lead with both strength and kindness is truly admirable
+            `;
+            document.querySelector('.fireworks').style.display = 'block';
+            document.getElementById('button3').classList.add('hidden');
         }
     </script>
 </body>
